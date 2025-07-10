@@ -20,7 +20,7 @@ function App() {
     }
 
     try {
-      const response = await fetch('http://localhost:5000/generate', {
+      const response = await fetch(`${process.env.REACT_APP_API}/generate`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ length, sets }),
