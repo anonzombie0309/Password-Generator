@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './App.css';
 
 function App() {
-  const [length, setLength] = useState(12);
+  const [length, setLength] = useState(null);  // null initially
   const [sets, setSets] = useState({
     upper: true,
     lower: true,
@@ -17,8 +17,8 @@ function App() {
   const handleGenerate = async () => {
     setError('');
 
-    if (length <= 0) {
-      setError("Password length must be greater than 0");
+    if (!length || length <= 0) {
+      setError("Please enter a valid password length greater than 0");
       setPassword('');
       return;
     }
@@ -82,7 +82,8 @@ function App() {
       <label>Password Length</label>
       <input
         type="number"
-        value={length === 0 ? '' : length}
+        value={length === null ? '' : length}
+        placeholder="Enter the length of password"
         min={1}
         max={128}
         onChange={(e) => {
@@ -90,7 +91,7 @@ function App() {
           if (!isNaN(val)) {
             setLength(val);
           } else {
-            setLength(0);
+            setLength(null);
           }
         }}
       />
