@@ -19,17 +19,20 @@ function App() {
 
     if (length <= 0) {
       setError("Password length must be greater than 0");
+      setPassword('');
       return;
     }
 
     if (length > 128) {
       setError("Password length must not exceed 128 characters");
+      setPassword('');
       return;
     }
 
     const selectedSets = Object.values(sets).filter(Boolean);
     if (selectedSets.length === 0) {
       setError("Please select at least one character set");
+      setPassword('');
       return;
     }
 
@@ -55,6 +58,7 @@ function App() {
     } catch (err) {
       console.error("Backend error:", err);
       setError("Unable to generate password. Please try again later.");
+      setPassword('');
     }
   };
 
@@ -112,7 +116,7 @@ function App() {
         Generate Password
       </button>
 
-      {password && (
+      {password && !error && (
         <div className="password-box">
           <input
             type={show ? 'text' : 'password'}
