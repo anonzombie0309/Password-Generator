@@ -116,8 +116,8 @@ fetch(\`\${process.env.REACT_APP_API}/generate\`, {...})
 ## 📸 Demo
 
 
-- Frontend: [[https://password-generator-yrlu.vercel.app/](https://password-generator-yrlu.vercel.app/)](#)
-- Backend: [[https://password-generator-hcjt.onrender.com](https://password-generator-hcjt.onrender.com)](#)
+- Frontend: [[https://password-generator-yrlu.vercel.app/](https://password-generator-yrlu.vercel.app/)]
+- Backend: [[https://password-generator-hcjt.onrender.com](https://password-generator-hcjt.onrender.com)]
 
 ---
 
